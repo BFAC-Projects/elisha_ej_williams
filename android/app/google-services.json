@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "806443614801",
+    "project_id": "elisha-ej-williams",
+    "storage_bucket": "elisha-ej-williams.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806443614801:android:b57c3852e676fc12f56e70",
+        "android_client_info": {
+          "package_name": "app.android.elisha_ej_williams"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKXSVdykYVUG6l3TWjnusfGNRRxViqnYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
