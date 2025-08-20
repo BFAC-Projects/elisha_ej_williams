@@ -107,7 +107,7 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                           _buildAnimatedSection(
                             delay: 400,
                             child: const Text(
-                              'Elisha "EJ" Williams, born March 31, 2009, in Dunn, North Carolina, is an American actor and voice artist known for standout roles in television and animation. Best recognized as Dean Williams in ABC\'s The Wonder Years reboot and as the voice of Bingo in Disney Jr.\'s Puppy Dog Pals, the portfolio also includes appearances in Nickelodeon\'s Henry Danger and Danger Force.\n\nRaised in a creative household with professional basketball player Harold "Lefty" Williams and author–entrepreneur Shyneefa Williams as parents, the passion for acting began at age eight with a lead role in a school production. That early spark grew into a career combining live-action and voice performances.\n\nBeyond the screen, interests include reading, singing, sports, and exploring technology through coding and app development, with science as a favorite academic pursuit.',
+                              'Elisha "EJ" Williams is one of Hollywood\'s brightest rising stars, best known for his breakout role as Dean Williams in ABC\'s acclaimed reimagining of The Wonder Years. Created by Saladin K. Patterson, produced by Lee Daniels, and directed by Ken Whittingham, the series airing on ABC, Disney+, and Hulu shines a new light on the Black American experience in Montgomery, Alabama, in 1968. EJ, the youngest Black male lead on a network TV series in decades, stars alongside Dulé Hill, Saycon Sengbloh, and Laura Kariuki, with narration by Oscar winner Don Cheadle.\n\nAt just 16, EJ has already earned a Hollywood Critics Association Award nomination and four NAACP Image Award nominations including Outstanding Actor in a Comedy Series and Outstanding Performance by a Youth. He\'s a Peabody Award winner and part of the Critics\' Choice Award–winning ensemble cast of The Wonder Years. Expanding his creative reach, EJ serves as an Executive Producer on the award-winning docuseries The Real Stories of Basketball, alongside his father Harold "Lefty" Williams and NBA legend LeBron James.\n\nEJ\'s career began at age eight with recurring roles on Nickelodeon\'s Henry Danger and Danger Force. He has also built an impressive voiceover portfolio, bringing to life fan favorites such as Bingo on Disney Junior\'s Puppy Dog Pals, Flash on Firebuds, and Dirk on Nickelodeon\'s The Loud House.\n\nA talented athlete with Harlem Globetrotters roots, EJ combines his love for basketball with a passion for giving back. Through his family\'s Dare2Dream Foundation recently honored by the NBA G-League\'s Wisconsin Herd. He inspires youth through sports, education, and character-building programs.\n\nOff-screen, EJ enjoys reading, singing, competitive sports, and coding apps. While his favorite subject in school is science, he also has a growing passion for directing and a long-term goal of attending law school. With his talent, drive, and dedication, EJ is poised to leave a lasting mark both in entertainment and beyond.',
                               style: TextStyle(
                                 fontSize: 16,
                                 height: 1.6,
@@ -128,22 +128,32 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                                 _buildFeatureItem(
                                   Icons.tv,
                                   'The Wonder Years (ABC)',
-                                  'Dean Williams - Lead role in the acclaimed reboot series',
+                                  'Dean Williams - Lead role in acclaimed reboot series with Peabody Award-winning ensemble cast',
                                 ),
                                 _buildFeatureItem(
                                   Icons.pets,
                                   'Puppy Dog Pals (Disney Jr.)',
-                                  'Voice of Bingo - Animated series character',
+                                  'Voice of Bingo - Beloved animated series character',
                                 ),
                                 _buildFeatureItem(
                                   Icons.flash_on,
-                                  'Henry Danger & Danger Force',
-                                  'Featured appearances on Nickelodeon productions',
+                                  'Firebuds (Disney Jr.)',
+                                  'Voice of Flash - Animated series character',
                                 ),
                                 _buildFeatureItem(
-                                  Icons.theater_comedy,
-                                  'Early Theater Work',
-                                  'Started acting journey at age 8 with school productions',
+                                  Icons.family_restroom,
+                                  'The Loud House (Nickelodeon)',
+                                  'Voice of Dirk - Popular animated series character',
+                                ),
+                                _buildFeatureItem(
+                                  Icons.sports_basketball,
+                                  'The Real Stories of Basketball',
+                                  'Executive Producer - Award-winning docuseries with LeBron James',
+                                ),
+                                _buildFeatureItem(
+                                  Icons.emoji_events,
+                                  'Awards & Recognition',
+                                  'NAACP Image Award nominations, Hollywood Critics Association Award nomination',
                                 ),
                               ],
                             ),
@@ -159,29 +169,34 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                             child: Column(
                               children: [
                                 _buildFeatureItem(
-                                  Icons.book,
-                                  'Reading',
-                                  'Passionate about literature and learning',
-                                ),
-                                _buildFeatureItem(
-                                  Icons.music_note,
-                                  'Singing',
-                                  'Musical expression and performance',
-                                ),
-                                _buildFeatureItem(
                                   Icons.sports_basketball,
-                                  'Sports',
-                                  'Active in various athletic pursuits',
+                                  'Basketball',
+                                  'Harlem Globetrotters roots and competitive sports',
+                                ),
+                                _buildFeatureItem(
+                                  Icons.volunteer_activism,
+                                  'Philanthropy',
+                                  'Dare2Dream Foundation - Inspiring youth through sports and education',
                                 ),
                                 _buildFeatureItem(
                                   Icons.code,
                                   'Technology',
-                                  'Coding and app development exploration',
+                                  'Coding apps and exploring technology',
                                 ),
                                 _buildFeatureItem(
                                   Icons.science,
                                   'Science',
-                                  'Favorite academic subject and area of study',
+                                  'Favorite academic subject and passion for learning',
+                                ),
+                                _buildFeatureItem(
+                                  Icons.movie,
+                                  'Directing',
+                                  'Growing passion for film direction and storytelling',
+                                ),
+                                _buildFeatureItem(
+                                  Icons.gavel,
+                                  'Law School',
+                                  'Long-term goal of pursuing legal education',
                                 ),
                               ],
                             ),
@@ -276,29 +291,5 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
     );
   }
 
-  Widget _buildContactItem(IconData icon, String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Row(
-        children: [
-          Icon(icon, color: const Color(0xFF618DAC), size: 20),
-          const SizedBox(width: 12),
-          Text(
-            '$label: ',
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: Colors.black87,
-            ),
-          ),
-          Expanded(
-            child: Text(
-              value,
-              style: TextStyle(fontSize: 16, color: Colors.grey[700]),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'about.dart';
@@ -94,10 +95,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   void _navigate(BuildContext context, Widget page) {
+    // Haptic feedback
+    HapticFeedback.mediumImpact();
     Navigator.of(context).push(MaterialPageRoute(builder: (_) => page));
   }
 
   void _shareApp() async {
+    // Haptic feedback
+    HapticFeedback.mediumImpact();
+    
     try {
       final configService = RemoteConfigService();
 
@@ -118,6 +124,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   void _onBannerTap() async {
+    // Haptic feedback
+    HapticFeedback.mediumImpact();
+    
     try {
       final configService = RemoteConfigService();
       final url = configService.bannerLinkUrl;
@@ -133,6 +142,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       print('Error opening banner URL: $e');
     }
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -304,7 +315,11 @@ class _HomeIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        // Haptic feedback
+        HapticFeedback.mediumImpact();
+        onTap();
+      },
       child: SizedBox(
         width: double.infinity,
         height: 48, // Reduced height
