@@ -1,5 +1,5 @@
 name: elisha_ej_williams
-description: "A new Flutter project."
+description: "Official app for EJ Williams - Actor, Voice Artist, and Rising Star"
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -26,6 +26,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   uses-material-design: true
@@ -42,3 +43,22 @@ flutter:
     - assets/share.png
     - assets/feature_background.jpg
     - assets/feature_header.png
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/app_icon.png"
+  remove_alpha_ios: true
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: "assets/app_icon.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/app_icon.png"
+    icon_size: 48
+  macos:
+    generate: true
+    image_path: "assets/app_icon.png"
