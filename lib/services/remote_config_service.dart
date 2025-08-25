@@ -16,6 +16,9 @@ class RemoteConfigService {
   String _bannerImageUrl = '';
   String _bannerLinkUrl = '';
   
+  // Hamburger menu parameter
+  bool _showHamburgerMenu = false;
+  
   bool _isInitialized = false;
 
   // Getters for instant access
@@ -42,6 +45,9 @@ class RemoteConfigService {
       ? _bannerLinkUrl 
       : 'https://athleteapps.com/';
 
+  // Hamburger menu getter
+  bool get showHamburgerMenu => _showHamburgerMenu;
+
   bool get isInitialized => _isInitialized;
 
   /// Initialize and fetch Remote Config values at app startup
@@ -64,6 +70,9 @@ class RemoteConfigService {
       _bannerImageUrl = remoteConfig.getString('banner_image_url');
       _bannerLinkUrl = remoteConfig.getString('banner_link_url');
       
+      // Cache hamburger menu value
+      _showHamburgerMenu = remoteConfig.getBool('show_hamburger_menu');
+      
       _isInitialized = true;
       
       print('RemoteConfigService: Initialized successfully');
@@ -73,6 +82,7 @@ class RemoteConfigService {
       print('- Show banner: $_showBanner');
       print('- Banner image URL: $_bannerImageUrl');
       print('- Banner link URL: $_bannerLinkUrl');
+      print('- Show hamburger menu: $_showHamburgerMenu');
       
     } catch (e) {
       print('RemoteConfigService: Error during initialization: $e');
@@ -85,6 +95,9 @@ class RemoteConfigService {
       _showBanner = false;
       _bannerImageUrl = 'https://apps.bfacmobile.com/images/application/183/features/image_gallery/6339/686d59621ade7.jpg';
       _bannerLinkUrl = 'https://athleteapps.com/';
+      
+      // Set hamburger menu fallback value (disabled by default)
+      _showHamburgerMenu = false;
       
       _isInitialized = true;
     }
@@ -108,6 +121,9 @@ class RemoteConfigService {
       _showBanner = remoteConfig.getBool('show_banner');
       _bannerImageUrl = remoteConfig.getString('banner_image_url');
       _bannerLinkUrl = remoteConfig.getString('banner_link_url');
+      
+      // Update hamburger menu value
+      _showHamburgerMenu = remoteConfig.getBool('show_hamburger_menu');
       
       print('RemoteConfigService: Background refresh completed');
       print('- Updated share message: "$_shareMessage"');

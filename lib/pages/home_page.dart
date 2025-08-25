@@ -6,6 +6,7 @@ import 'about.dart';
 import 'social.dart';
 import 'messages.dart';
 import 'videos.dart';
+import 'features_page.dart';
 import '../services/remote_config_service.dart';
 
 class HomePage extends StatefulWidget {
@@ -193,6 +194,39 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
             ),
           ),
+          
+          // Hamburger menu in top right corner (conditionally shown)
+          if (configService.showHamburgerMenu)
+            Positioned(
+              top: MediaQuery.of(context).padding.top + 16,
+              right: 16,
+              child: GestureDetector(
+                onTap: () {
+                  HapticFeedback.mediumImpact();
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const FeaturesPage(),
+                    ),
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: Colors.white.withOpacity(0.3),
+                      width: 1,
+                    ),
+                  ),
+                  child: const Icon(
+                    Icons.menu,
+                    color: Colors.white,
+                    size: 24,
+                  ),
+                ),
+              ),
+            ),
           // Button column absolutely positioned at the bottom
           Positioned(
             left: 0,
